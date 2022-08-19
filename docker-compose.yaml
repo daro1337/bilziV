@@ -1,0 +1,15 @@
+version: "3"
+services:
+  web1:
+    image: dariusza/bilziv-www:latest
+  web2:
+    image: dariusza/bilziv-www:latest
+  haproxy:
+    image:  dariusza/bilziv-haproxy:latest
+    volumes:
+        - ./haproxy/ssl:/usr/local/etc/haproxy/ssl/
+    ports:
+      - "443:443"
+    links:
+      - web1
+      - web2

@@ -1,0 +1,5 @@
+haproxy/ssl/*
+*.json
+*.crt
+*.key
+*.pem
